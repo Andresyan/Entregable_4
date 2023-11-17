@@ -10,13 +10,13 @@ function App() {
 
   useEffect(()=>{
     axios
-      .get("https://tasks22.onrender.com/users/")
+      .get("https://tasks22.onrender.com/api/v1/users/")
       .then((res) => setUsers(res.data));
   }, []);
 
   const getUsers = () => {
     axios
-      .get("https://tasks22.onrender.com/users/")
+      .get("https://tasks22.onrender.com/api/v1/users/")
       .then((res) => setUsers(res.data));
   };
 
@@ -28,7 +28,7 @@ function App() {
 
   const deleteUser = (id) => {
     axios
-      .delete(`https://tasks22.onrender.com/users/${id}/`)
+      .delete(`https://tasks22.onrender.com/api/v1/users/${id}/`)
       .then(() => getUsers());
   };
 
