@@ -34,7 +34,7 @@ const UsersForm = ({
         };
         if (userSelected !== null) {
             axios
-                .put(`https://tasks22.onrender.com/users/${userSelected.id}/`, user)
+                .put(`https://tasks22.onrender.com/api/v1/users/${userSelected.id}/`, user)
                 .then(() => {
                     getUsers();
                     reset();
@@ -42,7 +42,7 @@ const UsersForm = ({
                 });
         } else {
             axios
-                .post("https://tasks22.onrender.com/users/", user)
+                .post("https://tasks22.onrender.com/api/v1/users/", user)
                 .then(() => {
                     getUsers();
                     reset();
