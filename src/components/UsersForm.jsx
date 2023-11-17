@@ -6,34 +6,36 @@ const UsersForm = ({
     userSelected,
     deselectUser
 }) => {
-    const [firstName, setFirstName] = useState("");
+    const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [date, setDate] = useState("");
+    const [dni, setDni] = useState("");
+    const [occupation, setOccupation] = useState("");
+    
+    //const [email, setEmail] = useState("");
+    //const [password, setPassword] = useState("");
+    //const [date, setDate] = useState("");
 
     useEffect(() => {
         if (userSelected !== null) {
-            setFirstName(userSelected.first_name);
+            setName(userSelected.name);
             setLastName(userSelected.last_name);
-            setEmail(userSelected.email);
-            setPassword(userSelected.password);
-            setDate(userSelected.birthday);
+            setDni(userSelected.dni);
+            setOccupation(userSelected.occupation);
         }
     }, [userSelected]);
-
+    //setDate(userSelected.birthday);
     const submit = (e) => {
         e.preventDefault();
         const user = {
-            first_name: firstName,
+            name: name,
             last_name: lastName,
-            email,
-            password,
+            dni,
+            occupation,
             birthday: date
         };
         if (userSelected !== null) {
             axios
-                .put(`https://users-crud1.herokuapp.com/users/${userSelected.id}/`, user)
+                .put(`https://tasks22.onrender.com/users/${userSelected.id}/`, user)
                 .then(() => {
                     getUsers();
                     reset();
@@ -41,7 +43,7 @@ const UsersForm = ({
                 });
         } else {
             axios
-                .post("https://users-crud1.herokuapp.com/users/", user)
+                .post("https://tasks22.onrender.com/users/", user)
                 .then(() => {
                     getUsers();
                     reset();
@@ -51,13 +53,12 @@ const UsersForm = ({
     };
 
     const reset = () => {
-        setFirstName("");
+        setName("");
         setLastName("");
-        setEmail("");
-        setPassword("");
-        setDate("");
+        setDni("");
+        setOccupation("");    
     };
-
+    //setDate("");
     const clear = () => {
         reset();
         deselectUser();
@@ -69,12 +70,12 @@ const UsersForm = ({
             <div className='names-content'>
             <i className="fa-solid fa-user"></i>
             <div className="name-container">
-                <label htmlFor="firstName"></label>
+                <label htmlFor="name"></label>
                 <input
                     type="text"
-                    id="firstName" placeholder='FirstNameEE'
-                    onChange={(e) => setFirstName(e.target.value)}
-                    value={firstName}
+                    id="name" placeholder='FirstName'
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
                 />
             </div>
             <div className="name-container">
@@ -88,33 +89,23 @@ const UsersForm = ({
             </div>
             </div>
             <div className="input-container">
-                <label htmlFor="email"></label>
+                <label htmlFor="dni"></label>
                 <i className="fa-solid fa-envelope"></i>
                 <input
-                    type="text"
-                    id="email" placeholder='Email'
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
+                    type="number"
+                    id="dni" placeholder='Dni'
+                    onChange={(e) => setDni(e.target.value)}
+                    value={dni}
                 />
             </div>
             <div className="input-container">
-                <label htmlFor="password"></label>
+                <label htmlFor="occupation"></label>
                 <i className="fa-solid fa-lock"></i>
                 <input
-                    type="password"
-                    id="password" placeholder='Password'
-                    onChange={(e) => setPassword(e.target.value)}
-                    value={password}
-                />
-            </div>
-            <div className="input-container">
-                <label htmlFor="date"></label>
-                <i className="fa-solid fa-cake-candles"></i>
-                <input
-                    type="date"
-                    id="date" placeholder='Birthday'
-                    onChange={(e) => setDate(e.target.value)}
-                    value={date}
+                    type="text"
+                    id="occupation" placeholder='Occupation'
+                    onChange={(e) => setOccupation(e.target.value)}
+                    value={occupation}
                 />
             </div>
             <div className='button-content'>
@@ -124,5 +115,16 @@ const UsersForm = ({
         </form>
     );
 };
+
+            // <div className="input-container">
+            //    <label htmlFor="date"></label>
+            //    <i className="fa-solid fa-cake-candles"></i>
+            //    <input
+            //        type="date"
+            //        id="date" placeholder='Birthday'
+            //        onChange={(e) => setDate(e.target.value)}
+            //        value={date}
+            //    />
+            // </div>
 
 export default UsersForm;
