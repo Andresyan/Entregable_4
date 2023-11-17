@@ -30,8 +30,7 @@ const UsersForm = ({
             name: name,
             last_name: lastName,
             dni,
-            occupation,
-            birthday: date
+            occupation
         };
         if (userSelected !== null) {
             axios
@@ -90,7 +89,7 @@ const UsersForm = ({
             </div>
             <div className="input-container">
                 <label htmlFor="dni"></label>
-                <i className="fa-solid fa-envelope"></i>
+                <i className="fa-solid fa-user"></i>
                 <input
                     type="number"
                     id="dni" placeholder='Dni'
@@ -100,7 +99,7 @@ const UsersForm = ({
             </div>
             <div className="input-container">
                 <label htmlFor="occupation"></label>
-                <i className="fa-solid fa-lock"></i>
+                <i className="fa-solid fa-user"></i>
                 <input
                     type="text"
                     id="occupation" placeholder='Occupation'
