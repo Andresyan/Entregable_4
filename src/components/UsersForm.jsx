@@ -8,7 +8,7 @@ const UsersForm = ({
 }) => {
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [dni, setDni] = useState(0);
+    const [dni, setDni] = useState();
     const [occupation, setOccupation] = useState("");
     
     //const [email, setEmail] = useState("");
