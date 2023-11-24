@@ -5,7 +5,7 @@ import UsersList from './components/UsersList';
 import UsersForm from './components/UsersForm';
 
 function App() {
-  const [usersList, setUsersList] = useState({ data: [] });
+  const [usersList, setUsersList] = useState([]);
 
   const [userSelected, setUserSelected] = useState(null);
 
