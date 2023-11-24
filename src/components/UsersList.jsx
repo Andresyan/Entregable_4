@@ -9,7 +9,25 @@ const UsersList = ({ usersList, selectUser, deleteUser }) => {
       <ul>
         {usersList?.users?.map((user) => (
           <li key={user.id}>
-            <h4>{user.name}</h4>
+            <h4>{user.id}</h4>
+            <div>
+              <b>name: </b>
+              {user.name}
+            </div>
+            <div>
+              <b>last name: </b>
+              {user.lastName}
+            </div>
+            <div>
+              <b>DNI: </b>
+              {user.dni}
+            </div>
+            <div>
+              <b>Occupation </b>
+              {user.occupation}
+            </div>
+            <button onClick={() => deleteUser(user.id)}>Delete</button>
+            <button onClick={() => selectUser(user)}>Select</button>
           </li>
         ))}
       </ul>
