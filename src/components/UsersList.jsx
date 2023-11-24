@@ -6,7 +6,7 @@ const UsersList = ({users, selectUser, deleteUser}) => {
       <h1>Lista usuarios</h1>
       console.log(users);
       <ul>
-        {productsList.map((user) => (
+        {users.map((user) => (
           <li key={user.id}>
             <h4>{user.id}</h4>
             <div>
