@@ -8,7 +8,7 @@ const UsersForm = ({
 }) => {
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [dni, setDni] = useState("");
+    const [dni, setDni] = useState(0);
     const [occupation, setOccupation] = useState("");
     
     //const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ const UsersForm = ({
     useEffect(() => {
         if (userSelected !== null) {
             setName(userSelected.name);
-            setLastName(userSelected.last_name);
+            setLastName(userSelected.lastName);
             setDni(userSelected.dni);
             setOccupation(userSelected.occupation);
         }
@@ -28,7 +28,7 @@ const UsersForm = ({
         e.preventDefault();
         const user = {
             name: name,
-            last_name: lastName,
+            lastName: lastName,
             dni,
             occupation
         };
@@ -54,7 +54,7 @@ const UsersForm = ({
     const reset = () => {
         setName("");
         setLastName("");
-        setDni("");
+        setDni(0);
         setOccupation("");    
     };
     //setDate("");
