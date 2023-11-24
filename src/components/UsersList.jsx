@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UsersList = ({ users, selectUser, deleteUser }) => {
-  console.log(users);
+  console.log('Users prop in UsersList:', users);
   return (
     <div className="card-user">
       <h1>Lista usuarios</h1>
