@@ -5,7 +5,7 @@ const UsersList = ({ usersList, selectUser, deleteUser }) => {
   console.log('Users prop in UsersList:', usersList?.users?.[1].name);
   return (
     <div className="card-user">
-      <h1>Lista usuarios</h1>
+      <h1>Lista usuarios {usersList?.users?.[3].name} </h1>
       
     </div>
   );
