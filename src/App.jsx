@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <div className='list-container'>
-      <UsersList users={users} selectUser={selectUser} deleteUser={deleteUser} />
+      <UsersList users={users.data} selectUser={selectUser} deleteUser={deleteUser} />
       </div>
       <div className='form-container'>
       <UsersForm getUsers={getUsers} userSelected={userSelected} deselectUser={deselectUser}/>
