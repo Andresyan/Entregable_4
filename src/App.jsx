@@ -19,7 +19,7 @@ function App() {
       .get("https://tasks22.onrender.com/api/v1/users/")
       .then((res) => setUsers(res.data));
   };
-
+  console.log(users);
   const selectUser = (user) => {
     setUserSelected(user);
   };
