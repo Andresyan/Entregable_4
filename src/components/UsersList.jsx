@@ -1,8 +1,9 @@
 import React from 'react';
-console.log(users);
+
 const UsersList = ({users, selectUser, deleteUser}) => {
     return (
         <div className='card-user'>
+            console.log(users);
             {users.map((user)=> (
                 <ul key={user.id}>
                     <div>
