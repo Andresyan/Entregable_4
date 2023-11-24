@@ -4,9 +4,8 @@ const UsersList = ({users, selectUser, deleteUser}) => {
     return (
     <div className="card-user">
       <h1>Lista usuarios</h1>
-      console.log(users);
       <ul>
-        {users.data?.map((user) => (
+        {users.data && users.data.map((user) => (
           <li key={user.id}>
             <h4>{user.id}</h4>
             <div>
