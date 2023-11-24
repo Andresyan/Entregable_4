@@ -4,7 +4,7 @@ import React from 'react';
 const UsersList = ({ usersList, selectUser, deleteUser }) => {
   console.log('Users prop in UsersList:', usersList?.users?.[1].name);
   return (
-    <div className="users-list">
+    <div className="card-user">
       <h1>Users List</h1>
       <ul>
         {usersList?.users?.map((user) => (
