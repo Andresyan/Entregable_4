@@ -4,11 +4,10 @@ import React from 'react';
 const UsersList = ({ usersList, selectUser, deleteUser }) => {
   console.log('Users prop in UsersList:', usersList?.users?.[1].name);
   return (
-    <div className="card-user">
+    <div className="users-list">
       <h1>Users List</h1>
-      <ul>
         {usersList?.users?.map((user) => (
-          <li key={user.id}>
+          <ul key={user.id}>
             <h4>{user.id}</h4>
             <div>
               <b>name: </b>
@@ -28,9 +27,8 @@ const UsersList = ({ usersList, selectUser, deleteUser }) => {
             </div>
             <button onClick={() => deleteUser(user.id)}>Delete</button>
             <button onClick={() => selectUser(user)}>Select</button>
-          </li>
+          </ul>
         ))}
-      </ul>
     </div>
   );
 };
