@@ -1,11 +1,11 @@
 import React from 'react';
 
-const UsersList = ({users, selectUser, deleteUser}) => {
-    return (
+const UsersList = ({ users, selectUser, deleteUser }) => {
+  return (
     <div className="card-user">
       <h1>Lista usuarios</h1>
       <ul>
-        {users.data && users.data.map((user) => (
+        {Array.isArray(users.data) && users.data.map((user) => (
           <li key={user.id}>
             <h4>{user.id}</h4>
             <div>
@@ -26,5 +26,4 @@ const UsersList = ({users, selectUser, deleteUser}) => {
 };
 
 export default UsersList;
-
 
