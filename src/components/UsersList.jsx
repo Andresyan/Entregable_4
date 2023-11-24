@@ -1,12 +1,12 @@
 import React from 'react';
 
-const UsersList = ({ users, selectUser, deleteUser }) => {
-  console.log('Users prop in UsersList:', users);
+const UsersList = ({ usersList, selectUser, deleteUser }) => {
+  console.log('Users prop in UsersList:', usersList);
   return (
     <div className="card-user">
       <h1>Lista usuarios</h1>
       <ul>
-        {Array.isArray(users.data.data) && users.data.data.map((user) => (
+        {Array.isArray(usersList.data) && usersList.data.map((user) => (
           <li key={user.id}>
             <h4>{user.id}</h4>
             <div>
