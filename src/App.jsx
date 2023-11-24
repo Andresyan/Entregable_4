@@ -5,20 +5,20 @@ import UsersList from './components/UsersList';
 import UsersForm from './components/UsersForm';
 
 function App() {
-  const [users, setUsers] = useState({ data: [] });
+  const [usersList, setUsersList] = useState({ data: [] });
 
   const [userSelected, setUserSelected] = useState(null);
 
   useEffect(()=>{
     axios
       .get("https://tasks22.onrender.com/api/v1/users/")
-      .then((res) => setUsers(res.data));
+      .then((res) => setUsersList(res.data.data));
   }, []);
 
   const getUsers = () => {
     axios
       .get("https://tasks22.onrender.com/api/v1/users/")
-      .then((res) => setUsers(res.data));
+      .then((res) => setUsersList(res.data.data));
   };
   console.log(users);
   const selectUser = (user) => {
@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <div className='list-container'>
-      <UsersList users={users} selectUser={selectUser} deleteUser={deleteUser} />
+      <UsersList usersList={usersList} selectUser={selectUser} deleteUser={deleteUser} />
       </div>
       <div className='form-container'>
       <UsersForm getUsers={getUsers} userSelected={userSelected} deselectUser={deselectUser}/>
