@@ -1,5 +1,5 @@
 import React from 'react';
-
+console.log(users);
 const UsersList = ({users, selectUser, deleteUser}) => {
     return (
         <div className='card-user'>
