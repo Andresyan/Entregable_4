@@ -11,13 +11,13 @@ function App() {
   useEffect(()=>{
     axios
       .get("https://tasks22.onrender.com/api/v1/users/")
-      .then((res) => setUsers(res.data));
+      .then((res) => setUsers(res.data.data));
   }, []);
 
   const getUsers = () => {
     axios
       .get("https://tasks22.onrender.com/api/v1/users/")
-      .then((res) => setUsers(res.data));
+      .then((res) => setUsers(res.data.data));
   };
 
   const selectUser = (user) => {
