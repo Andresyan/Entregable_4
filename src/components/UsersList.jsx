@@ -5,7 +5,7 @@ const UsersList = ({ usersList, selectUser, deleteUser }) => {
   return (
     <div className="card-user">
       <h1>Lista usuarios</h1>
-      {userList}
+      {userList.users[1]}
     </div>
   );
 };
