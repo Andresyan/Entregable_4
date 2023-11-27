@@ -54,7 +54,7 @@ const UsersForm = ({
     const reset = () => {
         setName("");
         setLastName("");
-        setDni();
+        setDni("");
         setOccupation("");    
     };
     //setDate("");
